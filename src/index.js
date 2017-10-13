@@ -19,8 +19,8 @@ class App extends React.Component {
 
   render(){
     return(
-      <div>
-        <SearchBar/>
+      <div className="row">
+        <SearchBar />
         <VideoList videos={this.state.videos} />
       </div>
     );

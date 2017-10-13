@@ -12,7 +12,7 @@ export default class SearchBar extends React.Component {
       <div>
         <input 
         
-        onChange={(e) => this.setState({ term: e.target.value})}/>
+        onChange={(e) => this.setState({ term: e.target.value})}  className="col s12"/>
       </div>
     ); 
   }
