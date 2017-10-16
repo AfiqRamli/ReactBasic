@@ -1,13 +1,20 @@
 import React from 'react';
 
-const VideoListItem = ({video}) => {
+const VideoListItem = ({video, onVideoSelect}) => {
   const imageUrl = video.snippet.thumbnails.default.url;
 
   return (
-    <li className="collection-item avatar">
-      <img src={imageUrl} className="circle" />
-      <span className="title">{video.snippet.title}</span>
-      <p>{video.snippet.description}</p>
+    <li onClick={() => onVideoSelect(video)} className="card horizontal">
+      <div className="card-image">
+        <img src={imageUrl} />
+      </div>
+      <div className="card-stacked">
+        <div className="card-content">
+          <p><strong>{video.snippet.title}</strong></p>
+          <p>{video.snippet.channelTitle}</p>
+        </div>
+      </div>
+      
     </li>
   );
 }; 

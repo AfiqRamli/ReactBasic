@@ -11,8 +11,8 @@ export default class SearchBar extends React.Component {
     return (
       <div>
         <input 
-        
-        onChange={(e) => this.setState({ term: e.target.value})}  className="col s12"/>
+        placeholder="Search"
+        onChange={(e) => this.setState({ term: e.target.value})}  className="col s12 m8 l6"/>
       </div>
     ); 
   }
