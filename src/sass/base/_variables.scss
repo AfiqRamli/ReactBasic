@@ -1,0 +1,48 @@
+
+//  Google Fonts import
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,900");
+
+$main-font: "Playfair Display", "serif", "Helvatica";
+
+// Color Variables
+$background-main: #f5f6fa;
+$text: #9c9c9c;
+$input-text-color: #a3a3a3;
+$white-bg-color: #fff;
+$button-bg-color: #7f8ff4;
+$button-text-color: #fff;
+
+// @media query Mixins & Variables
+$phone-breakpoints: "(min-width: 320px) and (max-width: 480px)";
+$tablet-breakpoints: "(min-width: 768px) and (max-width: 1023px)";
+$desktop-breakpoints: "(min-width: 1024px)";
+
+@mixin phone {
+  @media #{$phone-breakpoints} {
+    @content;
+}
+
+@mixin tablet {
+  @media #{$tablet-breakpoints} {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media #{$desktop-breakpoints} {
+    @content;
+  }
+}
+
+@mixin retina {
+  @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+    @content;
+  }
+}
+}

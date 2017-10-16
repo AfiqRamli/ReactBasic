@@ -13,7 +13,7 @@ const VideoList = (props) => {
   });
   console.log(props.videos);
   return (
-    <ul className="col s12 m5">
+    <ul className="container-list">
       {videoItems}
     </ul>
   );

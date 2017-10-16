@@ -9,6 +9,9 @@ import SearchBar from './components/Search_bar';
 import VideoList from './components/Video_list';
 import VideoDetail from './components/Video_detail';
 
+// Import styles
+import Styles from './sass/app.scss';
+
 // Youtube API Key to use YT search services
 const API_KEY = 'AIzaSyBF_s_Xf5wRZmsyeZ8-0trBK6CxBWOJeD0';
 class App extends React.Component {
@@ -28,12 +31,15 @@ class App extends React.Component {
 
   render(){
     return(
-      <div className="row container">
+      <div className="container-main">
         <SearchBar />
-        <VideoDetail video={this.state.selectedVideo}/>
-        <VideoList 
-          onVideoSelect={selectedVideo => this.setState({selectedVideo})}
-          videos={this.state.videos} />
+        <div className="container-videos">
+          <VideoDetail video={this.state.selectedVideo}/>
+          <VideoList 
+            onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+            videos={this.state.videos} />
+        </div>
+        
       </div>
     );
   }

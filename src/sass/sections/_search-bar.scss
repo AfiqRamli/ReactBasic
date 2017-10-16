@@ -1,0 +1,40 @@
+
+@import '../base/_variables.scss';
+
+.container-search {
+  margin-bottom: 2.5em;
+
+  .search-input {
+    border: 0;
+    outline: 0;
+    padding: 1.1em 1em;
+    width: 400px;
+		background: #fff;
+		color: $input-text-color;
+		font: inherit;
+		box-shadow: 0 6px 10px 0 rgba(0, 0, 0 , .1);
+  }
+
+  .btn-search {
+    display: inline-block;
+    background: #C6426E;
+    color: $button-text-color;
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 0.2em;
+    outline: 0;
+    padding: 0.8em 2em;
+    margin-left: -6em;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+
+    &:hover {
+      background: darken($button-bg-color, 4%);
+    }
+    &:active {
+			background: $button-bg-color;
+			box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, .2);
+		}
+  }
+}
+

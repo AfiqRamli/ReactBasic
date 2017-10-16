@@ -9,10 +9,11 @@ export default class SearchBar extends React.Component {
 
   render(){
     return (
-      <div>
+      <div className="container-search">
         <input 
         placeholder="Search"
-        onChange={(e) => this.setState({ term: e.target.value})}  className="col s12 m8 l6"/>
+        onChange={(e) => this.setState({ term: e.target.value})}  className="search-input"/>
+        <button className="btn-search">search</button>
       </div>
     ); 
   }
