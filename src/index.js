@@ -1,5 +1,6 @@
 
 // npm package refs
+import _ from 'lodash';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
@@ -21,8 +22,11 @@ class App extends React.Component {
       videos: [],
       selectedVideo: null
     };
+    this.videoSearch('surfboards');
+  }
 
-    YTSearch({key: API_KEY, term: 'coldplay'},(videos)=> {this.setState({
+  videoSearch(term) {
+    YTSearch({key: API_KEY, term: term},(videos)=> {this.setState({
         videos: videos,
         selectedVideo:videos[0]    
       });
@@ -30,9 +34,12 @@ class App extends React.Component {
   }
 
   render(){
+    // Adding a delay using lodash of 300ms
+    const videoSearch = _.debounce((term) => {this.videoSearch(term)}, 300);
+
     return(
       <div className="container-main">
-        <SearchBar />
+        <SearchBar onSearchTermChange={videoSearch}/>
         <div className="container-videos">
           <VideoDetail video={this.state.selectedVideo}/>
           <VideoList 

@@ -11,7 +11,6 @@ const VideoList = (props) => {
         video={video}/>
     ); 
   });
-  console.log(props.videos);
   return (
     <ul className="container-list">
       {videoItems}
